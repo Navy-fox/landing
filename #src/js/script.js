@@ -14,6 +14,19 @@ testWebP(function (support) {
     }
 });
 
+// Меню бургер
+const iconMenu = document.querySelector('.burger');
+const menuBody = document.querySelector('.menu');
+if (iconMenu) {
+    iconMenu.addEventListener("click", function (e) {
+        document.body.classList.toggle('--lock');
+        // iconMenu.classList.toggle('--active');
+        const open = menuBody.classList.toggle('menu--active')
+        iconMenu.closest('picture').querySelector('source').srcset = open ? 'img/cross.svg' : 'img/bar.svg'
+        // iconMenu.src = open ? 'img/cross.svg' : 'img/bar.svg'
+    });
+}
+
 // Прокрутка при клике
 // Собираем массив объектов, которые будут участвовать в навигации
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
@@ -23,7 +36,9 @@ if (menuLinks.length > 0) {
         menuLink.addEventListener("click", onMenuLinkClick)
 
         function onMenuLinkClick(e) {
-            menuLinks.forEach(item=>{item.classList.remove('menu__link--active')})
+            menuLinks.forEach(item => {
+                item.classList.remove('menu__link--active')
+            })
             this.classList.add('menu__link--active')
             // Получаем объект, на который мы кликаем
             const menuLink = e.target;
@@ -33,6 +48,12 @@ if (menuLinks.length > 0) {
                 const gotoBlock = document.querySelector(menuLink.dataset.goto);
                 // Высчитываем положение объекта с учетом высоты шапки
                 const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+                if (iconMenu.classList.contains('--active')) {
+                    document.body.classList.remove('--lock');
+                    iconMenu.classList.remove('--active');
+                    menuBody.classList.remove('menu--active')
+                }
 
                 // Обращаемся к объекту window(окну браузера), пишем функцию занимающуюся прокруткой
                 window.scrollTo({
@@ -45,12 +66,4 @@ if (menuLinks.length > 0) {
     });
 }
 
-// Меню бургер
-const iconMenu = document.querySelector('.burger');
-if(iconMenu){
-    const menuBody = document.querySelector('.menu');
-    iconMenu.addEventListener("click", function (e){
-        iconMenu.classList.toggle('__active');
-        menuBody.classList.toggle('menu--active')
-    })
-}
+

@@ -20,6 +20,10 @@
   }
 }
 
+body.--lock{
+  overflow: hidden;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -172,7 +176,7 @@
     z-index: 2;
     background-color: $bg-color-withe;
     padding: 32px 30px 30px 30px;
-    transition: right 0.3s ease 0s;
+    transition: right 0.7s ease 0s;
     overflow: auto;
     &__link {
       font-size: 24px;
@@ -230,7 +234,6 @@
     margin-top: 60px;
   }
 }
-
 
 .burger {
   display: none;

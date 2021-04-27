@@ -86,6 +86,10 @@ a {
   display: none;
 }
 
+body.--lock {
+  overflow: hidden;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -320,9 +324,9 @@ a {
     z-index: 2;
     background-color: #ffffff;
     padding: 32px 30px 30px 30px;
-    -webkit-transition: right 0.3s ease 0s;
-    -o-transition: right 0.3s ease 0s;
-    transition: right 0.3s ease 0s;
+    -webkit-transition: right 0.7s ease 0s;
+    -o-transition: right 0.7s ease 0s;
+    transition: right 0.7s ease 0s;
     overflow: auto;
   }
 
