@@ -51,6 +51,6 @@ if(iconMenu){
     const menuBody = document.querySelector('.menu');
     iconMenu.addEventListener("click", function (e){
         iconMenu.classList.toggle('__active');
-        menuBody.classList.toggle('__active')
+        menuBody.classList.toggle('menu--active')
     })
 }

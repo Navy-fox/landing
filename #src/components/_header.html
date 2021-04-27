@@ -1,11 +1,20 @@
 <header class="header">
     <div class="wrapper">
-        <nav class="header__menu row justify--between link desktop-only">
-            <a href="#" class="link--active">Home</a>
-            <a href="#">About me</a>
-            <a href="#">Skills</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contacts</a>
+        <div class="menu__bar justify--between align--center row">
+            <div class="lang link mobile-only">
+                <a href="#">RU</a>
+                <span class="link--active">|</span>
+                <a href="#" class="link--active">ENG</a>
+            </div>
+            <img src="img/bar.svg" class="burger" alt="">
+        </div>
+
+        <nav class="header__menu row justify--between menu">
+            <a data-goto=".title-block" href="#" class="menu__link menu__link--active">Home</a>
+            <a data-goto=".about-me" href="#" class="menu__link">About me</a>
+            <a data-goto=".skills" href="#" class="menu__link">Skills</a>
+            <a data-goto=".portfolio" href="#" class="menu__link">Portfolio</a>
+            <a data-goto=".contacts" href="#" class="menu__link">Contacts</a>
         </nav>
     </div>
 </header>
